@@ -5,7 +5,7 @@ import { BatchMaster } from './pages/batch-master/batch-master';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'admin', component: Login },
+  { path: 'login', component: Login },
   {
     path: '',
     component: Layout,
