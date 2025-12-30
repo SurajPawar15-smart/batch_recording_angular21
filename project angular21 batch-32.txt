@@ -1,0 +1,383 @@
+https://feestracking.freeprojectapi.com
+
+Batches
+Candidates
+BatchEnrollments
+BatchSessions
+BatchUser => admin, candidates
+BatchDashboard
+
+create a repo => batch_recording_app_angular_21
+git clone <url>
+ng new 
+CSS
+No
+None
+
+npm install --f
+delete package-lock.json
+npm caches clear
+npm install -legacy-peer-def
+sometimes we face python install which using the angular project
+
+https://www.npmjs.com/search?q=bootstrap
+install bootstrap/tailwind/material
+angular.json => we need to add the link
+
+"styles":[
+"./node_modules/bootstrap/dist/css/bootstrap.min.css"
+]
+
+run the project
+ng s
+
+=> port
+http://localhost:4200 (By Default)
+ng serve --port 4203
+package.json
+"runlocal": "ng serve --port 4204"
+>npm run runlocal
+angular.json
+"server":
+"development":{
+"buildTarget":"batch_recording_app_Angular_@1:build:development"
+"port":4202
+}
+
+app =>
+pages(new folder)
+ng g c login
+ng g c batchMaster
+
+
+app.html:
+<router-outlet/>
+
+app.routes.ts
+export const roues:Routes=[
+{path:'',redirectTo:'login',pathMatch:'full'},
+{path:'admin',component:Login},
+{path:'',component:Layout,
+childredn:[
+{path:'batch',component:BatchMater},
+{path:'dashboard',component:Dashoard}
+]}
+]
+
+home
+localhost:4200/home/batch
+localhost:4200/home/dashboard
+
+''
+localhost:4200/batch
+localhost:4200/dashboard
+
+ng s
+
+Google Gemini:
+i need a login age with email and password fields with bootstrap, use some animations and modern colors, just provide html code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login | Glassmorphism</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Glassmorphism card */
+        .login-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+            border-color: #fff;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-login {
+            background: #fff;
+            color: #764ba2;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            width: 100%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 1rem;
+        }
+
+        .btn-login:hover {
+            transform: scale(1.05);
+            background: #f8f9fa;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        label {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            color: #fff;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Background Animated Circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="circle" style="width: 80px; height: 80px; left: 10%; bottom: -10%;"></div>
+    <div class="circle" style="width: 120px; height: 120px; right: 15%; bottom: -20%; animation-delay: 2s;"></div>
+    <div class="circle" style="width: 50px; height: 50px; left: 40%; bottom: -5%; animation-delay: 5s;"></div>
+
+    <div class="container d-flex justify-content-center">
+        <div class="login-card animate__animated animate__fadeInUp">
+            <h2 class="title">WELCOME BACK</h2>
+            
+            <form>
+                <div class="mb-4">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="remember">
+                        <label class="form-check-label text-white-50" for="remember" style="font-size: 0.8rem;">
+                            Remember me
+                        </label>
+                    </div>
+                    <a href="#" class="text-white-50 text-decoration-none" style="font-size: 0.8rem;">Forgot?</a>
+                </div>
+
+                <button type="submit" class="btn btn-login">SIGN IN</button>
+            </form>
+
+            <p class="text-center mt-4 text-white-50" style="font-size: 0.85rem;">
+                Don't have an account? <a href="#" class="text-white fw-bold text-decoration-none">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
